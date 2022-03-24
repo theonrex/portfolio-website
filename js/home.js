@@ -21,3 +21,61 @@
     });
   }); // end DOM ready
 })(jQuery); // end jQuery
+
+
+
+// let  numberPercent = document.querySelectorAll('.countbar')
+// let getPercent = Array.from(numberPercent)
+
+// getPercent.map((items) => {
+//     let startCount = 0
+//     let progressBar = () => {
+//         startCount ++
+//         items.innerHTML = `<h3>${startCount}%</h3>`
+//         items.style.width = `${startCount}%`
+//         if(startCount == items.dataset.percentnumber) {
+//             clearInterval(stop)
+//         }
+//     }
+//     let stop = setInterval(() => {
+//         progressBar()
+//     },25)
+// })
+
+
+  
+$(document).ready(function() {
+
+	$('.counter').each(function () {
+	$(this).prop('Counter',0).animate({
+	Counter: $(this).text()
+	}, {
+	duration: 4000,
+	easing: 'swing',
+	step: function (now) {
+	$(this).text(Math.ceil(now));
+	}
+	});
+	});
+	
+	});
+
+
+  var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
